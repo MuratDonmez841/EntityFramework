@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Product_Eva_DbModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Product_Eva_Db.dbo.V_Category_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_Category_V">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="ProductCategoryName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="Product_Eva_DbModel1StoreContainer">
+    <EntitySet Name="V_Category_V" EntityType="Self.V_Category_V" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_Category_V].[CategoryID] AS [CategoryID], 
+    [V_Category_V].[CategoryName] AS [CategoryName], 
+    [V_Category_V].[ProductCategoryName] AS [ProductCategoryName]
+    FROM [dbo].[V_Category_V] AS [V_Category_V]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Product_Eva_DbModelStoreContainer" CdmEntityContainer="ProductEva_Entities1">
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Apassword" ColumnName="Apassword" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedBack">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.FeedBack">
+        <MappingFragment StoreEntitySet="FeedBack">
+          <ScalarProperty Name="ReturnID" ColumnName="ReturnID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedBack_FeedBackDetail">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.FeedBack_FeedBackDetail">
+        <MappingFragment StoreEntitySet="FeedBack_FeedBackDetail">
+          <ScalarProperty Name="FeedBack_ID" ColumnName="FeedBack_ID" />
+          <ScalarProperty Name="FeedBakcDetailID" ColumnName="FeedBakcDetailID" />
+          <ScalarProperty Name="FFID" ColumnName="FFID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCategory">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.ProductCategory">
+        <MappingFragment StoreEntitySet="ProductCategory">
+          <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+          <ScalarProperty Name="ProductCategoryName" ColumnName="ProductCategoryName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sells">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.Sells">
+        <MappingFragment StoreEntitySet="Sells">
+          <ScalarProperty Name="Sell_Id" ColumnName="Sell_Id" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+          <ScalarProperty Name="DeliveryFlag" ColumnName="DeliveryFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_Categories">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.V_Categories">
+        <MappingFragment StoreEntitySet="V_Categories">
+          <ScalarProperty Name="ProductCategoryName" ColumnName="ProductCategoryName" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_FeedBakDetail">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.V_FeedBakDetail">
+        <MappingFragment StoreEntitySet="V_FeedBakDetail">
+          <ScalarProperty Name="CompanyReview" ColumnName="CompanyReview" />
+          <ScalarProperty Name="UserReview" ColumnName="UserReview" />
+          <ScalarProperty Name="KullanımKolaylıgı" ColumnName="KullanımKolaylıgı" />
+          <ScalarProperty Name="Kalite" ColumnName="Kalite" />
+          <ScalarProperty Name="FiyatPerf" ColumnName="FiyatPerf" />
+          <ScalarProperty Name="DısGörünüs" ColumnName="DısGörünüs" />
+          <ScalarProperty Name="Dayanıklılık" ColumnName="Dayanıklılık" />
+          <ScalarProperty Name="FeedBackDetail_ID" ColumnName="FeedBackDetail_ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="IMG" ColumnName="IMG" />
+          <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="SellStartDate" ColumnName="SellStartDate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="PName" ColumnName="PName" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_Product_V">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.V_Product_V">
+        <MappingFragment StoreEntitySet="V_Product_V">
+          <ScalarProperty Name="IMG" ColumnName="IMG" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="ProductCategoryName" ColumnName="ProductCategoryName" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="PName" ColumnName="PName" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="profilPhoto" ColumnName="profilPhoto" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserAdress" ColumnName="UserAdress" />
+          <ScalarProperty Name="UserPostaKod" ColumnName="UserPostaKod" />
+          <ScalarProperty Name="UserDisct" ColumnName="UserDisct" />
+          <ScalarProperty Name="UserProvi" ColumnName="UserProvi" />
+          <ScalarProperty Name="UserMail" ColumnName="UserMail" />
+          <ScalarProperty Name="UserTel" ColumnName="UserTel" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedBackDetail">
+      <EntityTypeMapping TypeName="Product_Eva_DbModel.FeedBackDetail">
+        <MappingFragment StoreEntitySet="FeedBackDetail">
+          <ScalarProperty Name="IMG" ColumnName="IMG" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="CompanyReview" ColumnName="CompanyReview" />
+          <ScalarProperty Name="UserReview" ColumnName="UserReview" />
+          <ScalarProperty Name="Dayanıklılık" ColumnName="Dayanıklılık" />
+          <ScalarProperty Name="Kalite" ColumnName="Kalite" />
+          <ScalarProperty Name="FiyatPerf" ColumnName="FiyatPerf" />
+          <ScalarProperty Name="KullanımKolaylıgı" ColumnName="KullanımKolaylıgı" />
+          <ScalarProperty Name="DısGörünüs" ColumnName="DısGörünüs" />
+          <ScalarProperty Name="FeedBackDetail_ID" ColumnName="FeedBackDetail_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

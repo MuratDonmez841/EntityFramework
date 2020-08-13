@@ -1,0 +1,29 @@
+﻿<Window x:Class="deneme.Win"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:deneme"
+        mc:Ignorable="d"
+        Title="Win" Height="450" Width="800">
+    <Window.Resources>
+            <ResourceDictionary >
+                <ResourceDictionary.MergedDictionaries >
+                    <ResourceDictionary Source="a/Dsdd.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Window.Resources>
+    
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Slider Margin="0,30,0,0" Grid.ColumnSpan="2" Grid.Row="0" Value="1" Maximum="2" SmallChange="0.01" Minimum="0" LargeChange="0.01" TickFrequency="0.1" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="1"/>
+        </Grid>
+   
+</Window>

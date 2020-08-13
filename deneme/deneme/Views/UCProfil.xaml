@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="deneme.Views.UCProfil"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:deneme.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.9*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Label Content="Profil" HorizontalAlignment="Center" Foreground="SteelBlue"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="145*"/>
+                <RowDefinition Height="281*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="129*"/>
+                <ColumnDefinition Width="671*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                <Button Name="btnimgUser" Height="145" Background="Transparent" Click="BtnimgUser_Click">
+                    <Image Name="UserProfilimg" Height="145"/>
+                </Button>
+
+            </StackPanel>
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="104*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="0.7*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.ColumnSpan="2" Grid.Row="0">
+                    <Label Content="Kişisel Bilgiler" HorizontalAlignment="Center" Foreground="SteelBlue"/>
+                </StackPanel>
+                <StackPanel Grid.Column="0" Grid.Row="1">
+                    <Label Content="Kullanıcı Numarası:"/>
+                    <Label Content="Adı ve Soyadı: "/>
+                    <Label Content="Cinsiyeti: "/>
+                    <Label Content="Doğum Tarihi: "/>
+
+                </StackPanel>
+                <StackPanel Grid.Column="2" Grid.Row="2">
+                    <Label Name="lblUserID" Margin="10,0"/>
+                    <TextBox Name="txtUserName" Margin="10,8"/>
+                    <ComboBox Name="txtCin" Margin="10,0"/>
+                    <DatePicker Name="DateBirDay" Margin="10,8"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.9*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <Label Content="İletişim Bilgileri" HorizontalAlignment="Center" Foreground="SteelBlue"/>
+                </StackPanel>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="17*"/>
+                        <RowDefinition Height="13*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.7*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Grid.RowSpan="2">
+                        <Label Content="Mail Adresi: "/>
+                        <Label Content="Telefon Numarası"/>
+                        <Label Content="Açık Adres"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.RowSpan="2">
+                        <TextBox Name="txtUserMail"   Margin="10,0"/>
+                        <TextBox Name="txtUserTelNu"   Margin="10,8" PreviewTextInput="TxtUserTelNu_PreviewTextInput" MaxLength="11" />
+                        <RichTextBox Name="richBoxAdress" HorizontalAlignment="Left"  Margin="10,0"/>
+                    </StackPanel>
+                    <Grid Grid.Column="1" Grid.Row="1">
+                        <Button Name="btnUpdate" Content="Bilgileri Güncelle" Height="35" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top" Click="BtnUpdate_Click"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

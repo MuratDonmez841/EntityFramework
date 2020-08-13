@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="74ef0e22aacf4bea80ebc825d2340c08" Name="Diagram1" ZoomLevel="66">
+        <EntityTypeShape EntityType="User_FeedBackModel.Category" Width="1.5" PointX="3.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="User_FeedBackModel.Company" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="User_FeedBackModel.Company_Info" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="User_FeedBackModel.FeedBack_Point" Width="1.5" PointX="12.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="User_FeedBackModel.Product" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="User_FeedBackModel.SubCategory" Width="1.5" PointX="6" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="User_FeedBackModel.User_Com" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="User_FeedBackModel.User_PI" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="User_FeedBackModel.vCategory" Width="1.5" PointX="0.875" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="User_FeedBackModel.vFeedBack" Width="1.5" PointX="8.375" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="User_FeedBackModel.vProducts" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="User_FeedBackModel.FK__SubCatego__Categ__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="User_FeedBackModel.FK__Company__UserID__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="User_FeedBackModel.FK__Company_I__Compa__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="User_FeedBackModel.FK__Product__Company__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="User_FeedBackModel.FK__Product__SubCate__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="User_FeedBackModel.FK__User_Com__ID__693CA210" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="User_FeedBackModel.FeedBack_Description" Width="1.5" PointX="12.75" PointY="2.75" />
+        <EntityTypeShape EntityType="User_FeedBackModel.FeedBack_Info" Width="1.5" PointX="10.5" PointY="6.125" />
+        <AssociationConnector Association="User_FeedBackModel.FK__FeedBack___FeedB__0D7A0286" />
+        <AssociationConnector Association="User_FeedBackModel.FK__FeedBack___FeedB__0B91BA14" />
+        <AssociationConnector Association="User_FeedBackModel.FK__FeedBack___Produ__08B54D69" />
+        <AssociationConnector Association="User_FeedBackModel.FK__FeedBack___UserI__09A971A2" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

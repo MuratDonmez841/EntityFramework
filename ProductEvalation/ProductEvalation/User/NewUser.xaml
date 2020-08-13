@@ -1,0 +1,57 @@
+﻿<Window x:Class="ProductEvalation.User.NewUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProductEvalation"
+        mc:Ignorable="d"
+        Title="NewUser" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="66*"/>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="51*"/>
+
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="1"  >
+
+            <Label Content="Adı Soyadı*:"/>
+            <Label Content="Telefon Numarası*:"/>
+            <Label Content="İl:"/>
+            <Label Content="İlçe"/>
+            <Label Content="Posta Kodu:"/>
+            <Label Content="Açık Adres:"/>
+            <Label Content="Mail Adresi*:"/>
+            <Label Content="Şifre*:"/>
+            <Label Content="Şifre Tekrar*:"/>
+            <Button Content="Kayıt ol" Name="btnCon" Click="BtnCon_Click" Margin="40,10"/>
+
+
+
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBox Name="txtName" Margin="5,5"/>
+            <TextBox Name="txtTelNo" Margin="5,3" PreviewTextInput="TxtTelNo_PreviewTextInput" MaxLength="11"/>
+            <TextBox Name="txtPr" Margin="5,5"/>
+            <TextBox Name="txtDis" Margin="5,3"  />
+            <TextBox Name="txtPostaKod" Margin="5,5" PreviewTextInput="TxtTelNo_PreviewTextInput" MaxLength="5"/>
+            <TextBox Name="txtAdress" Margin="5,3"/>
+            <TextBox Name="txtMail" Margin="5,3" TextChanged="TxtMail_TextChanged"/>
+            <PasswordBox Name="txtPass1" Margin="5,3" PasswordChanged="TxtPass2_PasswordChanged" />
+            <PasswordBox Name="txtPass2" Margin="5,5" PasswordChanged="TxtPass2_PasswordChanged" />
+            <Button x:Name="btnMainPage" Content="Ana Sayfa" Margin="84,12" Click="BtnMainPage_Click"/>
+
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+            <Button Content="Profil Resimi Seçin" Name="btnUserProfilPhoto" HorizontalAlignment="Left" Margin="0,5" Click="BtnUserProfilPhoto_Click"/>
+            <Label Margin="0,120,0,0"  Name="lblMailControl"/>
+            <Label Margin="0,40" Name="lblPass"  />
+
+        </StackPanel>
+        <StackPanel Grid.Column="3">
+            <Image Name="userProfilPhoto" Height="100" Width="75" HorizontalAlignment="Left"/>
+        </StackPanel>
+    </Grid>
+</Window>

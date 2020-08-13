@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dd0f37446ed74b6eb9cbed804714e3cc" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="Product_Eva_DbModel.Category" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Product_Eva_DbModel.Company" Width="1.5" PointX="5.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Product_Eva_DbModel.FeedBack" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Product_Eva_DbModel.FeedBack_FeedBackDetail" Width="1.5" PointX="9.625" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Product_Eva_DbModel.ProductCategory" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Product_Eva_DbModel.Sells" Width="1.5" PointX="4.75" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="Product_Eva_DbModel.FK__ProductCa__Categ__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="Product_Eva_DbModel.FK__FeedBack___FeedB__5EBF139D" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Product_Eva_DbModel.V_Categories" Width="1.5" PointX="1" PointY="6.25" />
+        <EntityTypeShape EntityType="Product_Eva_DbModel.V_FeedBakDetail" Width="1.5" PointX="9.625" PointY="6.625" />
+        <EntityTypeShape EntityType="Product_Eva_DbModel.Products" Width="1.5" PointX="5.25" PointY="2.75" />
+        <AssociationConnector Association="Product_Eva_DbModel.FK__Products__Compan__6C190EBB" />
+        <AssociationConnector Association="Product_Eva_DbModel.FK__ProductRe__Produ__4CA06362" />
+        <AssociationConnector Association="Product_Eva_DbModel.FK__Products__Produc__72C60C4A" />
+        <AssociationConnector Association="Product_Eva_DbModel.FK__Sells__ProductID__3C69FB99" />
+        <EntityTypeShape EntityType="Product_Eva_DbModel.V_Product_V" Width="1.5" PointX="3" PointY="6.125" />
+        <EntityTypeShape EntityType="Product_Eva_DbModel.Users" Width="1.5" PointX="7.25" PointY="6.75" />
+        <AssociationConnector Association="Product_Eva_DbModel.FK__ProductRe__UserI__4BAC3F29" />
+        <AssociationConnector Association="Product_Eva_DbModel.FK__Sells__UserID__3B75D760" />
+        <EntityTypeShape EntityType="Product_Eva_DbModel.FeedBackDetail" Width="1.5" PointX="11.5" PointY="3.875" />
+        <AssociationConnector Association="Product_Eva_DbModel.FK__FeedBack___FeedB__5FB337D6" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

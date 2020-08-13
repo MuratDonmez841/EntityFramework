@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Product_Eva_DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProductCategory" Relationship="Self.FK__ProductCa__Categ__71D1E811" FromRole="Category" ToRole="ProductCategory" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Apassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Products" Relationship="Product_Eva_DbModel.FK__Products__Compan__6C190EBB" FromRole="Company" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="FeedBack">
+    <Key>
+      <PropertyRef Name="ReturnID" />
+    </Key>
+    <Property Name="ReturnID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <NavigationProperty Name="FeedBack_FeedBackDetail" Relationship="Self.FK__FeedBack___FeedB__5EBF139D" FromRole="FeedBack" ToRole="FeedBack_FeedBackDetail" />
+    <NavigationProperty Name="Products" Relationship="Product_Eva_DbModel.FK__ProductRe__Produ__4CA06362" FromRole="FeedBack" ToRole="Products" />
+    <NavigationProperty Name="Users" Relationship="Product_Eva_DbModel.FK__ProductRe__UserI__4BAC3F29" FromRole="FeedBack" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="FeedBack_FeedBackDetail">
+    <Key>
+      <PropertyRef Name="FFID" />
+    </Key>
+    <Property Name="FeedBack_ID" Type="Int32" />
+    <Property Name="FeedBakcDetailID" Type="Int32" />
+    <Property Name="FFID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="FeedBack" Relationship="Self.FK__FeedBack___FeedB__5EBF139D" FromRole="FeedBack_FeedBackDetail" ToRole="FeedBack" />
+    <NavigationProperty Name="FeedBackDetail" Relationship="Product_Eva_DbModel.FK__FeedBack___FeedB__5FB337D6" FromRole="FeedBack_FeedBackDetail" ToRole="FeedBackDetail" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="ProductCategoryID" />
+    </Key>
+    <Property Name="ProductCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__ProductCa__Categ__71D1E811" FromRole="ProductCategory" ToRole="Category" />
+    <NavigationProperty Name="Products" Relationship="Product_Eva_DbModel.FK__Products__Produc__72C60C4A" FromRole="ProductCategory" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Sells">
+    <Key>
+      <PropertyRef Name="Sell_Id" />
+    </Key>
+    <Property Name="Sell_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DeliveryTime" Type="DateTime" Precision="3" />
+    <Property Name="DeliveryFlag" Type="Byte" />
+    <NavigationProperty Name="Products" Relationship="Product_Eva_DbModel.FK__Sells__ProductID__3C69FB99" FromRole="Sells" ToRole="Products" />
+    <NavigationProperty Name="Users" Relationship="Product_Eva_DbModel.FK__Sells__UserID__3B75D760" FromRole="Sells" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK__ProductCa__Categ__71D1E811">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="ProductCategory">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FeedBack___FeedB__5EBF139D">
+    <End Role="FeedBack" Type="Self.FeedBack" Multiplicity="0..1" />
+    <End Role="FeedBack_FeedBackDetail" Type="Self.FeedBack_FeedBackDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FeedBack">
+        <PropertyRef Name="ReturnID" />
+      </Principal>
+      <Dependent Role="FeedBack_FeedBackDetail">
+        <PropertyRef Name="FeedBack_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProductEva_Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Company" EntityType="Self.Company" />
+    <EntitySet Name="FeedBack" EntityType="Self.FeedBack" />
+    <EntitySet Name="FeedBack_FeedBackDetail" EntityType="Self.FeedBack_FeedBackDetail" />
+    <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" />
+    <EntitySet Name="Sells" EntityType="Self.Sells" />
+    <AssociationSet Name="FK__ProductCa__Categ__71D1E811" Association="Self.FK__ProductCa__Categ__71D1E811">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FeedBack___FeedB__5EBF139D" Association="Self.FK__FeedBack___FeedB__5EBF139D">
+      <End Role="FeedBack" EntitySet="FeedBack" />
+      <End Role="FeedBack_FeedBackDetail" EntitySet="FeedBack_FeedBackDetail" />
+    </AssociationSet>
+    <EntitySet Name="V_Categories" EntityType="Product_Eva_DbModel.V_Categories" />
+    <EntitySet Name="V_FeedBakDetail" EntityType="Product_Eva_DbModel.V_FeedBakDetail" />
+    <EntitySet Name="Products" EntityType="Product_Eva_DbModel.Products" />
+    <AssociationSet Name="FK__Products__Compan__6C190EBB" Association="Product_Eva_DbModel.FK__Products__Compan__6C190EBB">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductRe__Produ__4CA06362" Association="Product_Eva_DbModel.FK__ProductRe__Produ__4CA06362">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="FeedBack" EntitySet="FeedBack" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__Produc__72C60C4A" Association="Product_Eva_DbModel.FK__Products__Produc__72C60C4A">
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sells__ProductID__3C69FB99" Association="Product_Eva_DbModel.FK__Sells__ProductID__3C69FB99">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Sells" EntitySet="Sells" />
+    </AssociationSet>
+    <EntitySet Name="V_Product_V" EntityType="Product_Eva_DbModel.V_Product_V" />
+    <EntitySet Name="Users" EntityType="Product_Eva_DbModel.Users" />
+    <AssociationSet Name="FK__ProductRe__UserI__4BAC3F29" Association="Product_Eva_DbModel.FK__ProductRe__UserI__4BAC3F29">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="FeedBack" EntitySet="FeedBack" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sells__UserID__3B75D760" Association="Product_Eva_DbModel.FK__Sells__UserID__3B75D760">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Sells" EntitySet="Sells" />
+    </AssociationSet>
+    <EntitySet Name="FeedBackDetail" EntityType="Product_Eva_DbModel.FeedBackDetail" />
+    <AssociationSet Name="FK__FeedBack___FeedB__5FB337D6" Association="Product_Eva_DbModel.FK__FeedBack___FeedB__5FB337D6">
+      <End Role="FeedBackDetail" EntitySet="FeedBackDetail" />
+      <End Role="FeedBack_FeedBackDetail" EntitySet="FeedBack_FeedBackDetail" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="V_Categories">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int64" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="V_FeedBakDetail">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int64" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="FeedBackDetail_ID" Type="Int32" Nullable="false" />
+    <Property Name="Dayanıklılık" Type="Int32" />
+    <Property Name="DısGörünüs" Type="Int32" />
+    <Property Name="FiyatPerf" Type="Int32" />
+    <Property Name="Kalite" Type="Int32" />
+    <Property Name="KullanımKolaylıgı" Type="Int32" />
+    <Property Name="UserReview" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyReview" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SellStartDate" Type="DateTime" Precision="3" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="ProductCategoryID" Type="Int32" />
+    <Property Name="IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Company" Relationship="Product_Eva_DbModel.FK__Products__Compan__6C190EBB" FromRole="Products" ToRole="Company" />
+    <NavigationProperty Name="FeedBack" Relationship="Product_Eva_DbModel.FK__ProductRe__Produ__4CA06362" FromRole="Products" ToRole="FeedBack" />
+    <NavigationProperty Name="ProductCategory" Relationship="Product_Eva_DbModel.FK__Products__Produc__72C60C4A" FromRole="Products" ToRole="ProductCategory" />
+    <NavigationProperty Name="Sells" Relationship="Product_Eva_DbModel.FK__Sells__ProductID__3C69FB99" FromRole="Products" ToRole="Sells" />
+  </EntityType>
+  <Association Name="FK__Products__Compan__6C190EBB">
+    <End Type="Product_Eva_DbModel.Company" Role="Company" Multiplicity="0..1" />
+    <End Type="Product_Eva_DbModel.Products" Role="Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductRe__Produ__4CA06362">
+    <End Type="Product_Eva_DbModel.Products" Role="Products" Multiplicity="0..1" />
+    <End Type="Product_Eva_DbModel.FeedBack" Role="FeedBack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="FeedBack">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__Produc__72C60C4A">
+    <End Type="Product_Eva_DbModel.ProductCategory" Role="ProductCategory" Multiplicity="0..1" />
+    <End Type="Product_Eva_DbModel.Products" Role="Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="ProductCategoryID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="ProductCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sells__ProductID__3C69FB99">
+    <End Type="Product_Eva_DbModel.Products" Role="Products" Multiplicity="0..1" />
+    <End Type="Product_Eva_DbModel.Sells" Role="Sells" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Sells">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="V_Product_V">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int64" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserTel" Type="Int64" />
+    <Property Name="UserMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserProvi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserDisct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserPostaKod" Type="Int32" />
+    <Property Name="UserAdress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="profilPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FeedBack" Relationship="Product_Eva_DbModel.FK__ProductRe__UserI__4BAC3F29" FromRole="Users" ToRole="FeedBack" />
+    <NavigationProperty Name="Sells" Relationship="Product_Eva_DbModel.FK__Sells__UserID__3B75D760" FromRole="Users" ToRole="Sells" />
+  </EntityType>
+  <Association Name="FK__ProductRe__UserI__4BAC3F29">
+    <End Type="Product_Eva_DbModel.Users" Role="Users" Multiplicity="0..1" />
+    <End Type="Product_Eva_DbModel.FeedBack" Role="FeedBack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="FeedBack">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sells__UserID__3B75D760">
+    <End Type="Product_Eva_DbModel.Users" Role="Users" Multiplicity="0..1" />
+    <End Type="Product_Eva_DbModel.Sells" Role="Sells" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Sells">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FeedBackDetail">
+    <Key>
+      <PropertyRef Name="FeedBackDetail_ID" />
+    </Key>
+    <Property Name="FeedBackDetail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DısGörünüs" Type="Int32" />
+    <Property Name="KullanımKolaylıgı" Type="Int32" />
+    <Property Name="FiyatPerf" Type="Int32" />
+    <Property Name="Kalite" Type="Int32" />
+    <Property Name="Dayanıklılık" Type="Int32" />
+    <Property Name="UserReview" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyReview" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Flag" Type="Byte" />
+    <Property Name="IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FeedBack_FeedBackDetail" Relationship="Product_Eva_DbModel.FK__FeedBack___FeedB__5FB337D6" FromRole="FeedBackDetail" ToRole="FeedBack_FeedBackDetail" />
+  </EntityType>
+  <Association Name="FK__FeedBack___FeedB__5FB337D6">
+    <End Type="Product_Eva_DbModel.FeedBackDetail" Role="FeedBackDetail" Multiplicity="0..1" />
+    <End Type="Product_Eva_DbModel.FeedBack_FeedBackDetail" Role="FeedBack_FeedBackDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FeedBackDetail">
+        <PropertyRef Name="FeedBackDetail_ID" />
+      </Principal>
+      <Dependent Role="FeedBack_FeedBackDetail">
+        <PropertyRef Name="FeedBakcDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

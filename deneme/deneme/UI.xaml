@@ -1,0 +1,36 @@
+﻿<Window x:Class="deneme.UI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:deneme"
+        mc:Ignorable="d"
+        Title="UI" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="185*"/>
+            <ColumnDefinition Width="607*"/>
+        </Grid.ColumnDefinitions>
+        <TreeView Margin="0,30,0,0" Grid.Column="0">
+            <TreeViewItem Header="Geri Bildirim ">
+                <Button Name="bbtnFeedBack" Background="Transparent" Width="142" Click="Btndeneme_Click" BorderBrush="Transparent" Content="Oluştur">
+                </Button>
+                <Button Name="btnGecmis" Background="Transparent" Content="Geçmiş Bildirimlerim" Width="142" BorderBrush="Transparent" Click="BtnGecmis_Click"  />
+            </TreeViewItem>
+            <TreeViewItem Header="Kişisel Bilgiler" IsExpanded="True">
+                <Button Name="btnProfil" Background="Transparent" Width="142" Click="BtnProfil_Click" BorderBrush="Transparent" Content="Profilim">
+
+                </Button>
+                <Button Background="Transparent" Name="btnPassword" Width="142" Click="BtnPassword_Click" BorderBrush="Transparent" Content="Şifre İşlemleri">
+
+                </Button>
+            </TreeViewItem>
+            <TreeViewItem Header="Mağzalar" Name="treeViewItemMagzalar" >
+                
+            </TreeViewItem>
+        </TreeView>
+        <Grid Name="gridMain" Grid.Column="1" Margin="20">
+      
+        </Grid>
+    </Grid>
+</Window>

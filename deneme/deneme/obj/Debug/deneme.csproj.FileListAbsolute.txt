@@ -1,0 +1,120 @@
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\bin\Debug\deneme.exe.config
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\bin\Debug\deneme.exe
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\bin\Debug\deneme.pdb
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\MainWindow.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCMain.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\App.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\deneme_MarkupCompile.cache
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\deneme_MarkupCompile.lref
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\MainWindow.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCMain.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\deneme.g.resources
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\deneme.Properties.Resources.resources
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\deneme.csproj.GenerateResource.cache
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\deneme.csproj.CoreCompileInputs.cache
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\deneme.exe
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\deneme.pdb
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\UI.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\UI.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCFeedBack.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCProfil.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCFeedBack.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCProfil.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Register.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCPasswaord.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCRegister.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Register.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCPasswaord.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCRegister.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\deneme_Content.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\bin\Debug\EntityFramework.dll
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\bin\Debug\EntityFramework.xml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\deneme.csproj.CopyComplete
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\CompanyMainxaml.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCcompany.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\CompanyMainxaml.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCcompany.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCNewProduct.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCcategory.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCRemoveProduct.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCUpdateProduct.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCNewProduct.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCcategory.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCRemoveProduct.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCUpdateProduct.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCFeedBacksCompany.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCFeedBackInfo.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCFeedBacksCompany.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCFeedBackInfo.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCUserOldFeedBacks.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCUserOldFeedBacks.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCProducts.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Views\UCProducts.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Win.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\a\Dsdd.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\Win.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\denemedd.g.cs
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\denemedd.baml
+C:\Users\stajyer.itproje2\source\repos\deneme\deneme\obj\Debug\deneme.csprojAssemblyReference.cache
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\bin\Debug\deneme.exe.config
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\bin\Debug\deneme.exe
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\bin\Debug\deneme.pdb
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\bin\Debug\EntityFramework.dll
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\bin\Debug\EntityFramework.xml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\deneme.csprojAssemblyReference.cache
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\a\Dsdd.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\CompanyMainxaml.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\denemedd.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\MainWindow.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Register.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\UI.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCcategory.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCcompany.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCFeedBack.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCFeedBackInfo.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCFeedBacksCompany.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCMain.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCNewProduct.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCPasswaord.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCProducts.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCProfil.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCRegister.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCRemoveProduct.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCUpdateProduct.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCUserOldFeedBacks.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Win.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\App.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\deneme_Content.g.cs
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\deneme_MarkupCompile.cache
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\deneme_MarkupCompile.lref
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\CompanyMainxaml.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\denemedd.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\MainWindow.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Register.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\UI.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCcategory.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCcompany.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCFeedBack.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCFeedBackInfo.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCFeedBacksCompany.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCMain.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCNewProduct.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCPasswaord.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCProducts.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCProfil.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCRegister.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCRemoveProduct.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCUpdateProduct.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Views\UCUserOldFeedBacks.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\Win.baml
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\deneme.g.resources
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\deneme.Properties.Resources.resources
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\deneme.csproj.GenerateResource.cache
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\deneme.csproj.CoreCompileInputs.cache
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\deneme.csproj.CopyComplete
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\deneme.exe
+C:\Users\murat\OneDrive\Masaüstü\düzenlenen proje\Staj 2\deneme\deneme\obj\Debug\deneme.pdb

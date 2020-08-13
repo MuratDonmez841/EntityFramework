@@ -1,0 +1,42 @@
+﻿<Window x:Class="ProductEvalation.Admin.NewAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProductEvalation.Admin"
+        mc:Ignorable="d"
+        Title="NewAdmin" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.75*"/>
+                <ColumnDefinition Width="1*"/>
+
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" >
+
+                <Label Content="Şirket Adı:"/>
+                <Label Content="Mail Adresi:"/>
+                <Label Content="Şifre:"/>
+                <Label Content="Şifre Tekrar:"/>
+                <Button Content="Kayıt ol" Name="btnCon" Click="BtnCon_Click" Margin="25,0" />
+
+
+
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBox Name="txtName" Margin="5,5"/>
+                <TextBox Name="txtMail" Margin="5,3"  />
+                <PasswordBox Name="txtPass1" Margin="5,3" PasswordChanged="TxtPass1_PasswordChanged" />
+                <PasswordBox Name="txtPass2" Margin="5,5" PasswordChanged="TxtPass1_PasswordChanged"/>
+                <Button x:Name="btnBack" Content="Ana Sayfa" Margin="70,0" Click="BtnBack_Click"/>
+
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <Label Name="lblPass" Margin="0,80"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

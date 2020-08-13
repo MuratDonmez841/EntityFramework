@@ -1,0 +1,164 @@
+﻿<Window x:Class="ProductEvalation.Admin.Product"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProductEvalation.Admin"
+        mc:Ignorable="d"
+        Title="Product" Height="450" Width="800">
+    <Grid>
+        <TabControl >
+            <TabItem Header="Ürün Ekle,Düzenle ve Sil">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Label Content="Şirket İsmi: "/>
+                        <Label Content="Ürün İsmi: "/>
+                        <Label Content="Ürün Rengi: "/>
+                        <Label Content="Ürün Fiyatı: "/>
+                        <Label Content="Ürün Kategorisi: "/>
+                        <Label Content="Ürün Alt Kategorisi: "/>
+                        <Label Content="Ürün Satış Başlangıcı: "/>
+                        <Label Content="Ürün Resmi: "/>
+
+                        <Button Name="btnIMG" Content="Resim Seç" Margin="30,20" Click="BtnIMG_Click"/>
+                        <Button Name="btnNewProduct" Content="Ürün Ekle" Margin="30,20" Click="BtnNewProduct_Click"/>
+                        <Button Name="btnPback" Content="Ana Sayfa" Margin="30,0" Click="BtnPback_Click"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" >
+                        <TextBox Name="txtCompany" Margin="5,5" Background="LightGray"/>
+                        <TextBox Name="txtProductName" Margin="5,5"/>
+                        <TextBox Name="txtProductColor" Margin="5,5"/>
+                        <TextBox Name="txtProductPrice" Margin="5,2"/>
+                        <ComboBox Name="cbCategory" Margin="5,2"/>
+                        <ComboBox Name="cbProductCategory" Margin="5,2"/>
+                        <DatePicker Name="datePickerSellStart" Margin="5,3"/>
+                        <Image Name="imgProduct" Height="100"  />
+
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <DataGrid Name="dtGridProduct" Margin="20,5" IsReadOnly="True" SelectionChanged="DtGridProduct_SelectionChanged"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Katagori Ekle">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.6*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Label Content="Genel Kategorisi: " />
+                        <Label Content="Özel Kategorisi: "/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <TextBox Name="txtCategoryName" Margin="15,5"/>
+                        <TextBox Name="txtPerCategory" Margin="15,5"/>
+                        <Button Name="btnCategoryAdd" Content="Kategori Ekle" Margin="40,10" Click="BtnCategoryAdd_Click"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <DataGrid Name="dtGridCategory" IsReadOnly="True"/>
+                    </StackPanel>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Şiparişler">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" >
+                        <DataGrid Name="dtGridSells" SelectionChanged="DtGridSells_SelectionChanged" IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Label Content="Siparişi veren Kişi"/>
+                        <Label Content="Ürün Adı"/>
+                        <Label Content="Sipariş Numarası"/>
+                        <Label Content="Ürün Fiyatı"/>
+                        <Label Content="Teslim Edilme Tarihi"/>
+                        <Label Content="Teslim Durumu"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+
+                        <Label Content="" Name="LblName"/>
+                        <Label Content="" Name="lblProduct"/>
+                        <Label Content="" Name="lblSellNu"/>
+                        <Label Content="" Name="lblPrice"/>
+                        <Label Content="" Name="lblDateTime"/>
+                        <Label Content="" Name="lblFlag"/>
+                        <Button Content="Teslim Edildi" Name="btnDFlag" Click="BtnDFlag_Click"/>
+                    </StackPanel>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Talepler ve Puanlamalar">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="332*"/>
+                        <ColumnDefinition Width="105*"/>
+                        <ColumnDefinition Width="174*"/>
+                        <ColumnDefinition Width="175*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" >
+                        <DataGrid Name="dtGridTP" SelectionChanged="DtGridTP_SelectionChanged"  IsReadOnly="True"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Image Name="ImUsersProductPhoto" Height="150" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <Label Content="Geri Bildirim Numarası"/>
+                        <Label Content="Siparişi veren Kişi"/>
+                        <Label Content="Ürün Adı"/>
+                        <Label Content="Dayanıklılık Puan"/>
+                        <Label Content="Dış Görünüş Puanı"/>
+                        <Label Content="Fiyat Performans Puanı"/>
+                        <Label Content="Kalite Puanı"/>
+                        <Label Content="Kullanım Kolaylığı Puanı"/>
+                        <Label Content="Geri Bildirim Aktiflik Durumu"/>
+                        <Label Content="Kullanıcının açıklaması"/>
+                        <Label Content="Şirket açıklaması"/>
+                        <Button Name="btnCompanyDes" Content="Açıklamayı Kaydet" Click="BtnCompanyDes_Click"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="3">
+                        <Label Content="" Name="lblFeedBackNU"/>
+                        <Label Content="" Name="LblNameP"/>
+                        <Label Content="" Name="lblProductP"/>
+                        <Label Content="" Name="lblDayanıklılık"/>
+                        <Label Content="" Name="lblDısGörünüs"/>
+                        <Label Content="" Name="lblFiyatPerf"/>
+                        <Label Content="" Name="lblKalite"/>
+                        <Label Content="" Name="lblKullanımK"/>
+                        <Label Content="" Name="lblDurum"/>
+                        <RichTextBox Name="txtAcıklama" Margin="0,5" IsReadOnly="True" Background="LightGray"/>
+                        <RichTextBox Name="txtSirketA" Margin="0,3"/>
+                        <Button Content="Geri Bildirimi Kapat" Name="bntFlag" Click="BntFlag_Click"/>
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Profil" Margin="316,0,-319,0" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <Label Content="Bilgiler" HorizontalAlignment="Center"/>
+                        <Label Name="lblCompanyName"/>
+                        <Label Name="lblCompanyID"/>
+                        <Label Name="lblCompanyMail"/>
+                        <Label Name="lblCompanyToplamSatis"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

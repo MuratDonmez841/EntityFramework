@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="deneme.Views.UCPasswaord"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:deneme.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="319*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="101*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="0.9*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <Label Content="Şifre Yenile" HorizontalAlignment="Center" Foreground="SteelBlue"/>
+            </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="315*"/>
+                    <ColumnDefinition Width="323*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <Label Content="Eski Şifre*: "/>
+                    <Label Content="Yeni Şifre*: "/>
+                    <Label Content="Yeni Şifre(Tekrar)*:"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <PasswordBox Name="passBoxOld" Margin="10,0"/>
+                    <PasswordBox Name="passBoxNewFirst" Margin="10,8" PasswordChanged="PassBoxNewFirst_PasswordChanged" />
+                    <PasswordBox Name="passBoxNewSecond" Margin="10,0" PasswordChanged="PassBoxNewFirst_PasswordChanged" />
+                    <Label Name="lblpass"/>
+                    <Button Name="btnPassUpdate" Content="Kaydet" HorizontalAlignment="Center" Margin="0,8" Click="BtnPassUpdate_Click"/>
+                </StackPanel>
+                
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</UserControl>

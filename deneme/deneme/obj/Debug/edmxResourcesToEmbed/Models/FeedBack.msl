@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="User_FeedBackModelStoreContainer" CdmEntityContainer="FBEntities">
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="User_FeedBackModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company">
+      <EntityTypeMapping TypeName="User_FeedBackModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company_Info">
+      <EntityTypeMapping TypeName="User_FeedBackModel.Company_Info">
+        <MappingFragment StoreEntitySet="Company_Info">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="TelNu" ColumnName="TelNu" />
+          <ScalarProperty Name="Info_ID" ColumnName="Info_ID" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedBack_Point">
+      <EntityTypeMapping TypeName="User_FeedBackModel.FeedBack_Point">
+        <MappingFragment StoreEntitySet="FeedBack_Point">
+          <ScalarProperty Name="FeedBackID" ColumnName="FeedBackID" />
+          <ScalarProperty Name="Dayaniklilik" ColumnName="Dayaniklilik" />
+          <ScalarProperty Name="FiyatPerformans" ColumnName="FiyatPerformans" />
+          <ScalarProperty Name="Kalite" ColumnName="Kalite" />
+          <ScalarProperty Name="DisGörünüs" ColumnName="DisGörünüs" />
+          <ScalarProperty Name="KullanimKolayligi" ColumnName="KullanimKolayligi" />
+          <ScalarProperty Name="Point_ID" ColumnName="Point_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="User_FeedBackModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SellPrice" ColumnName="SellPrice" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategory">
+      <EntityTypeMapping TypeName="User_FeedBackModel.SubCategory">
+        <MappingFragment StoreEntitySet="SubCategory">
+          <ScalarProperty Name="SubID" ColumnName="SubID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="SubName" ColumnName="SubName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Com">
+      <EntityTypeMapping TypeName="User_FeedBackModel.User_Com">
+        <MappingFragment StoreEntitySet="User_Com">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Com_ID" ColumnName="Com_ID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_PI">
+      <EntityTypeMapping TypeName="User_FeedBackModel.User_PI">
+        <MappingFragment StoreEntitySet="User_PI">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+          <ScalarProperty Name="BirdDay" ColumnName="BirdDay" />
+          <ScalarProperty Name="IMG" ColumnName="IMG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vCategory">
+      <EntityTypeMapping TypeName="User_FeedBackModel.vCategory">
+        <MappingFragment StoreEntitySet="vCategory">
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="SubName" ColumnName="SubName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vFeedBack">
+      <EntityTypeMapping TypeName="User_FeedBackModel.vFeedBack">
+        <MappingFragment StoreEntitySet="vFeedBack">
+          <ScalarProperty Name="Bildirim_Numarası" ColumnName="Bildirim_Numarası" />
+          <ScalarProperty Name="Kullanıcı_Adı" ColumnName="Kullanıcı_Adı" />
+          <ScalarProperty Name="Ürün_İsmi" ColumnName="Ürün_İsmi" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vProducts">
+      <EntityTypeMapping TypeName="User_FeedBackModel.vProducts">
+        <MappingFragment StoreEntitySet="vProducts">
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SubName" ColumnName="SubName" />
+          <ScalarProperty Name="SellPrice" ColumnName="SellPrice" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedBack_Description">
+      <EntityTypeMapping TypeName="User_FeedBackModel.FeedBack_Description">
+        <MappingFragment StoreEntitySet="FeedBack_Description">
+          <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+          <ScalarProperty Name="Desc_ID" ColumnName="Desc_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FeedBackID" ColumnName="FeedBackID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedBack_Info">
+      <EntityTypeMapping TypeName="User_FeedBackModel.FeedBack_Info">
+        <MappingFragment StoreEntitySet="FeedBack_Info">
+          <ScalarProperty Name="IMG" ColumnName="IMG" />
+          <ScalarProperty Name="FormationDay" ColumnName="FormationDay" />
+          <ScalarProperty Name="BuyDate" ColumnName="BuyDate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="FeedBackID" ColumnName="FeedBackID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

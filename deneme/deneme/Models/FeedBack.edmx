@@ -1,0 +1,842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="User_FeedBackModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="20" />
+          <Property Name="UserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Company_Info">
+          <Key>
+            <PropertyRef Name="Info_ID" />
+          </Key>
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="Mail" Type="varchar" MaxLength="30" />
+          <Property Name="Adress" Type="varchar" MaxLength="100" />
+          <Property Name="TelNu" Type="bigint" />
+          <Property Name="Info_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Icon" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="FeedBack_Description">
+          <Key>
+            <PropertyRef Name="Desc_ID" />
+          </Key>
+          <Property Name="FeedBackID" Type="int" />
+          <Property Name="Description" Type="varchar" MaxLength="150" />
+          <Property Name="Desc_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyDescription" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="FeedBack_Info">
+          <Key>
+            <PropertyRef Name="FeedBackID" />
+          </Key>
+          <Property Name="FeedBackID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="BuyDate" Type="datetime" />
+          <Property Name="FormationDay" Type="date" />
+          <Property Name="IMG" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FeedBack_Point">
+          <Key>
+            <PropertyRef Name="Point_ID" />
+          </Key>
+          <Property Name="FeedBackID" Type="int" />
+          <Property Name="Dayaniklilik" Type="int" />
+          <Property Name="FiyatPerformans" Type="int" />
+          <Property Name="Kalite" Type="int" />
+          <Property Name="DisGörünüs" Type="int" />
+          <Property Name="KullanimKolayligi" Type="int" />
+          <Property Name="Point_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="SellPrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="SubCategoryID" Type="int" />
+          <Property Name="CompanyID" Type="int" />
+        </EntityType>
+        <EntityType Name="SubCategory">
+          <Key>
+            <PropertyRef Name="SubID" />
+          </Key>
+          <Property Name="SubID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="SubName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="User_Com">
+          <Key>
+            <PropertyRef Name="Com_ID" />
+          </Key>
+          <Property Name="ID" Type="int" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="bigint" Nullable="false" />
+          <Property Name="Adress" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Com_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User_PI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UName" Type="varchar" MaxLength="65" Nullable="false" />
+          <Property Name="Cinsiyet" Type="char" MaxLength="1" />
+          <Property Name="BirdDay" Type="datetime" />
+          <Property Name="IMG" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'User_FeedBack.dbo.vCategory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vCategory">
+          <Key>
+            
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="bigint" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="20" />
+          <Property Name="SubName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'User_FeedBack.dbo.vFeedBack' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vFeedBack">
+          <Key>
+            <PropertyRef Name="Bildirim_Numarası" />
+            
+            
+          </Key>
+          <Property Name="Bildirim_Numarası" Type="int" Nullable="false" />
+          <Property Name="Kullanıcı_Adı" Type="varchar" MaxLength="65" Nullable="false" />
+          <Property Name="Ürün_İsmi" Type="varchar" MaxLength="20" />
+          <Property Name="Company" Type="int" Nullable="false" />
+          <Property Name="Tarih" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'User_FeedBack.dbo.vProducts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vProducts">
+          <Key>
+            
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="bigint" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="SubName" Type="varchar" MaxLength="20" />
+          <Property Name="SellPrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__Company__UserID__7B5B524B">
+          <End Role="User_PI" Type="Self.User_PI" Multiplicity="0..1" />
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_PI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Company_I__Compa__7D439ABD">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Company_Info" Type="Self.Company_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Company_Info">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FeedBack___FeedB__0B91BA14">
+          <End Role="FeedBack_Info" Type="Self.FeedBack_Info" Multiplicity="0..1" />
+          <End Role="FeedBack_Point" Type="Self.FeedBack_Point" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeedBack_Info">
+              <PropertyRef Name="FeedBackID" />
+            </Principal>
+            <Dependent Role="FeedBack_Point">
+              <PropertyRef Name="FeedBackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FeedBack___FeedB__0D7A0286">
+          <End Role="FeedBack_Info" Type="Self.FeedBack_Info" Multiplicity="0..1" />
+          <End Role="FeedBack_Description" Type="Self.FeedBack_Description" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeedBack_Info">
+              <PropertyRef Name="FeedBackID" />
+            </Principal>
+            <Dependent Role="FeedBack_Description">
+              <PropertyRef Name="FeedBackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FeedBack___Produ__08B54D69">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="FeedBack_Info" Type="Self.FeedBack_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeedBack_Info">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FeedBack___UserI__09A971A2">
+          <End Role="User_PI" Type="Self.User_PI" Multiplicity="1" />
+          <End Role="FeedBack_Info" Type="Self.FeedBack_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_PI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeedBack_Info">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Company__05D8E0BE">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__SubCate__04E4BC85">
+          <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubCategory">
+              <PropertyRef Name="SubID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SubCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SubCatego__Categ__02084FDA">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="SubCategory">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Com__ID__693CA210">
+          <End Role="User_PI" Type="Self.User_PI" Multiplicity="0..1" />
+          <End Role="User_Com" Type="Self.User_Com" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_PI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_Com">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="User_FeedBackModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company_Info" EntityType="Self.Company_Info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FeedBack_Description" EntityType="Self.FeedBack_Description" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FeedBack_Info" EntityType="Self.FeedBack_Info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FeedBack_Point" EntityType="Self.FeedBack_Point" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubCategory" EntityType="Self.SubCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Com" EntityType="Self.User_Com" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_PI" EntityType="Self.User_PI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vCategory" EntityType="Self.vCategory" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vCategory].[RowId] AS [RowId], 
+    [vCategory].[CategoryID] AS [CategoryID], 
+    [vCategory].[CategoryName] AS [CategoryName], 
+    [vCategory].[SubName] AS [SubName]
+    FROM [dbo].[vCategory] AS [vCategory]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vFeedBack" EntityType="Self.vFeedBack" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vFeedBack].[Bildirim_Numarası] AS [Bildirim_Numarası], 
+    [vFeedBack].[Kullanıcı_Adı] AS [Kullanıcı_Adı], 
+    [vFeedBack].[Ürün_İsmi] AS [Ürün_İsmi], 
+    [vFeedBack].[Company] AS [Company], 
+    [vFeedBack].[Tarih] AS [Tarih]
+    FROM [dbo].[vFeedBack] AS [vFeedBack]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vProducts" EntityType="Self.vProducts" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vProducts].[RowId] AS [RowId], 
+    [vProducts].[ID] AS [ID], 
+    [vProducts].[Name] AS [Name], 
+    [vProducts].[SubName] AS [SubName], 
+    [vProducts].[SellPrice] AS [SellPrice], 
+    [vProducts].[CompanyName] AS [CompanyName]
+    FROM [dbo].[vProducts] AS [vProducts]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Company__UserID__7B5B524B" Association="Self.FK__Company__UserID__7B5B524B">
+            <End Role="User_PI" EntitySet="User_PI" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Company_I__Compa__7D439ABD" Association="Self.FK__Company_I__Compa__7D439ABD">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Company_Info" EntitySet="Company_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FeedBack___FeedB__0B91BA14" Association="Self.FK__FeedBack___FeedB__0B91BA14">
+            <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+            <End Role="FeedBack_Point" EntitySet="FeedBack_Point" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FeedBack___FeedB__0D7A0286" Association="Self.FK__FeedBack___FeedB__0D7A0286">
+            <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+            <End Role="FeedBack_Description" EntitySet="FeedBack_Description" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FeedBack___Produ__08B54D69" Association="Self.FK__FeedBack___Produ__08B54D69">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FeedBack___UserI__09A971A2" Association="Self.FK__FeedBack___UserI__09A971A2">
+            <End Role="User_PI" EntitySet="User_PI" />
+            <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Company__05D8E0BE" Association="Self.FK__Product__Company__05D8E0BE">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__SubCate__04E4BC85" Association="Self.FK__Product__SubCate__04E4BC85">
+            <End Role="SubCategory" EntitySet="SubCategory" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SubCatego__Categ__02084FDA" Association="Self.FK__SubCatego__Categ__02084FDA">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="SubCategory" EntitySet="SubCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Com__ID__693CA210" Association="Self.FK__User_Com__ID__693CA210">
+            <End Role="User_PI" EntitySet="User_PI" />
+            <End Role="User_Com" EntitySet="User_Com" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="User_FeedBackModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SubCategory" Relationship="Self.FK__SubCatego__Categ__02084FDA" FromRole="Category" ToRole="SubCategory" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="User_PI" Relationship="Self.FK__Company__UserID__7B5B524B" FromRole="Company" ToRole="User_PI" />
+          <NavigationProperty Name="Company_Info" Relationship="Self.FK__Company_I__Compa__7D439ABD" FromRole="Company" ToRole="Company_Info" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Product__Company__05D8E0BE" FromRole="Company" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Company_Info">
+          <Key>
+            <PropertyRef Name="Info_ID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Adress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelNu" Type="Int64" />
+          <Property Name="Info_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Icon" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__Company_I__Compa__7D439ABD" FromRole="Company_Info" ToRole="Company" />
+        </EntityType>
+        <EntityType Name="FeedBack_Point">
+          <Key>
+            <PropertyRef Name="Point_ID" />
+          </Key>
+          <Property Name="FeedBackID" Type="Int32" />
+          <Property Name="Dayaniklilik" Type="Int32" />
+          <Property Name="FiyatPerformans" Type="Int32" />
+          <Property Name="Kalite" Type="Int32" />
+          <Property Name="DisGörünüs" Type="Int32" />
+          <Property Name="KullanimKolayligi" Type="Int32" />
+          <Property Name="Point_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="FeedBack_Info" Relationship="User_FeedBackModel.FK__FeedBack___FeedB__0B91BA14" FromRole="FeedBack_Point" ToRole="FeedBack_Info" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SellPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SubCategoryID" Type="Int32" />
+          <Property Name="CompanyID" Type="Int32" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__Product__Company__05D8E0BE" FromRole="Product" ToRole="Company" />
+          <NavigationProperty Name="SubCategory" Relationship="Self.FK__Product__SubCate__04E4BC85" FromRole="Product" ToRole="SubCategory" />
+          <NavigationProperty Name="FeedBack_Info" Relationship="User_FeedBackModel.FK__FeedBack___Produ__08B54D69" FromRole="Product" ToRole="FeedBack_Info" />
+        </EntityType>
+        <EntityType Name="SubCategory">
+          <Key>
+            <PropertyRef Name="SubID" />
+          </Key>
+          <Property Name="SubID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="SubName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__SubCatego__Categ__02084FDA" FromRole="SubCategory" ToRole="Category" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Product__SubCate__04E4BC85" FromRole="SubCategory" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="User_Com">
+          <Key>
+            <PropertyRef Name="Com_ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="Int64" Nullable="false" />
+          <Property Name="Adress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Com_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User_PI" Relationship="Self.FK__User_Com__ID__693CA210" FromRole="User_Com" ToRole="User_PI" />
+        </EntityType>
+        <EntityType Name="User_PI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UName" Type="String" MaxLength="65" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cinsiyet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="BirdDay" Type="DateTime" Precision="3" />
+          <Property Name="IMG" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__Company__UserID__7B5B524B" FromRole="User_PI" ToRole="Company" />
+          <NavigationProperty Name="User_Com" Relationship="Self.FK__User_Com__ID__693CA210" FromRole="User_PI" ToRole="User_Com" />
+          <NavigationProperty Name="FeedBack_Info" Relationship="User_FeedBackModel.FK__FeedBack___UserI__09A971A2" FromRole="User_PI" ToRole="FeedBack_Info" />
+        </EntityType>
+        <EntityType Name="vCategory">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="Int64" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SubName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vFeedBack">
+          <Key>
+            <PropertyRef Name="Bildirim_Numarası" />
+          </Key>
+          <Property Name="Bildirim_Numarası" Type="Int32" Nullable="false" />
+          <Property Name="Kullanıcı_Adı" Type="String" MaxLength="65" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ürün_İsmi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="Int32" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="vProducts">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="Int64" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SubName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SellPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CompanyName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__SubCatego__Categ__02084FDA">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="SubCategory">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Company__UserID__7B5B524B">
+          <End Role="User_PI" Type="Self.User_PI" Multiplicity="0..1" />
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_PI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Company_I__Compa__7D439ABD">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Company_Info" Type="Self.Company_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Company_Info">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Company__05D8E0BE">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__SubCate__04E4BC85">
+          <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubCategory">
+              <PropertyRef Name="SubID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SubCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Com__ID__693CA210">
+          <End Role="User_PI" Type="Self.User_PI" Multiplicity="0..1" />
+          <End Role="User_Com" Type="Self.User_Com" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_PI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_Com">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Category" EntityType="Self.Category" />
+          <EntitySet Name="Company" EntityType="Self.Company" />
+          <EntitySet Name="Company_Info" EntityType="Self.Company_Info" />
+          <EntitySet Name="FeedBack_Point" EntityType="Self.FeedBack_Point" />
+          <EntitySet Name="Product" EntityType="Self.Product" />
+          <EntitySet Name="SubCategory" EntityType="Self.SubCategory" />
+          <EntitySet Name="User_Com" EntityType="Self.User_Com" />
+          <EntitySet Name="User_PI" EntityType="Self.User_PI" />
+          <EntitySet Name="vCategory" EntityType="Self.vCategory" />
+          <EntitySet Name="vFeedBack" EntityType="Self.vFeedBack" />
+          <EntitySet Name="vProducts" EntityType="Self.vProducts" />
+          <AssociationSet Name="FK__SubCatego__Categ__02084FDA" Association="Self.FK__SubCatego__Categ__02084FDA">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="SubCategory" EntitySet="SubCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Company__UserID__7B5B524B" Association="Self.FK__Company__UserID__7B5B524B">
+            <End Role="User_PI" EntitySet="User_PI" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Company_I__Compa__7D439ABD" Association="Self.FK__Company_I__Compa__7D439ABD">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Company_Info" EntitySet="Company_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Company__05D8E0BE" Association="Self.FK__Product__Company__05D8E0BE">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__SubCate__04E4BC85" Association="Self.FK__Product__SubCate__04E4BC85">
+            <End Role="SubCategory" EntitySet="SubCategory" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Com__ID__693CA210" Association="Self.FK__User_Com__ID__693CA210">
+            <End Role="User_PI" EntitySet="User_PI" />
+            <End Role="User_Com" EntitySet="User_Com" />
+          </AssociationSet>
+          <EntitySet Name="FeedBack_Description" EntityType="User_FeedBackModel.FeedBack_Description" />
+          <EntitySet Name="FeedBack_Info" EntityType="User_FeedBackModel.FeedBack_Info" />
+          <AssociationSet Name="FK__FeedBack___FeedB__0D7A0286" Association="User_FeedBackModel.FK__FeedBack___FeedB__0D7A0286">
+            <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+            <End Role="FeedBack_Description" EntitySet="FeedBack_Description" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FeedBack___FeedB__0B91BA14" Association="User_FeedBackModel.FK__FeedBack___FeedB__0B91BA14">
+            <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+            <End Role="FeedBack_Point" EntitySet="FeedBack_Point" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FeedBack___Produ__08B54D69" Association="User_FeedBackModel.FK__FeedBack___Produ__08B54D69">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FeedBack___UserI__09A971A2" Association="User_FeedBackModel.FK__FeedBack___UserI__09A971A2">
+            <End Role="User_PI" EntitySet="User_PI" />
+            <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="FeedBack_Description">
+          <Key>
+            <PropertyRef Name="Desc_ID" />
+          </Key>
+          <Property Name="FeedBackID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Desc_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyDescription" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FeedBack_Info" Relationship="User_FeedBackModel.FK__FeedBack___FeedB__0D7A0286" FromRole="FeedBack_Description" ToRole="FeedBack_Info" />
+        </EntityType>
+        <EntityType Name="FeedBack_Info">
+          <Key>
+            <PropertyRef Name="FeedBackID" />
+          </Key>
+          <Property Name="FeedBackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="BuyDate" Type="DateTime" Precision="3" />
+          <Property Name="FormationDay" Type="DateTime" Precision="0" />
+          <Property Name="IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FeedBack_Description" Relationship="User_FeedBackModel.FK__FeedBack___FeedB__0D7A0286" FromRole="FeedBack_Info" ToRole="FeedBack_Description" />
+          <NavigationProperty Name="FeedBack_Point" Relationship="User_FeedBackModel.FK__FeedBack___FeedB__0B91BA14" FromRole="FeedBack_Info" ToRole="FeedBack_Point" />
+          <NavigationProperty Name="Product" Relationship="User_FeedBackModel.FK__FeedBack___Produ__08B54D69" FromRole="FeedBack_Info" ToRole="Product" />
+          <NavigationProperty Name="User_PI" Relationship="User_FeedBackModel.FK__FeedBack___UserI__09A971A2" FromRole="FeedBack_Info" ToRole="User_PI" />
+        </EntityType>
+        <Association Name="FK__FeedBack___FeedB__0D7A0286">
+          <End Type="User_FeedBackModel.FeedBack_Info" Role="FeedBack_Info" Multiplicity="0..1" />
+          <End Type="User_FeedBackModel.FeedBack_Description" Role="FeedBack_Description" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeedBack_Info">
+              <PropertyRef Name="FeedBackID" />
+            </Principal>
+            <Dependent Role="FeedBack_Description">
+              <PropertyRef Name="FeedBackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FeedBack___FeedB__0B91BA14">
+          <End Type="User_FeedBackModel.FeedBack_Info" Role="FeedBack_Info" Multiplicity="0..1" />
+          <End Type="User_FeedBackModel.FeedBack_Point" Role="FeedBack_Point" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeedBack_Info">
+              <PropertyRef Name="FeedBackID" />
+            </Principal>
+            <Dependent Role="FeedBack_Point">
+              <PropertyRef Name="FeedBackID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FeedBack___Produ__08B54D69">
+          <End Type="User_FeedBackModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="User_FeedBackModel.FeedBack_Info" Role="FeedBack_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeedBack_Info">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FeedBack___UserI__09A971A2">
+          <End Type="User_FeedBackModel.User_PI" Role="User_PI" Multiplicity="1" />
+          <End Type="User_FeedBackModel.FeedBack_Info" Role="FeedBack_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_PI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeedBack_Info">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="User_FeedBackModelStoreContainer" CdmEntityContainer="FBEntities">
+          <EntitySetMapping Name="Category">
+            <EntityTypeMapping TypeName="User_FeedBackModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="User_FeedBackModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company_Info">
+            <EntityTypeMapping TypeName="User_FeedBackModel.Company_Info">
+              <MappingFragment StoreEntitySet="Company_Info">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="TelNu" ColumnName="TelNu" />
+                <ScalarProperty Name="Info_ID" ColumnName="Info_ID" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeedBack_Point">
+            <EntityTypeMapping TypeName="User_FeedBackModel.FeedBack_Point">
+              <MappingFragment StoreEntitySet="FeedBack_Point">
+                <ScalarProperty Name="FeedBackID" ColumnName="FeedBackID" />
+                <ScalarProperty Name="Dayaniklilik" ColumnName="Dayaniklilik" />
+                <ScalarProperty Name="FiyatPerformans" ColumnName="FiyatPerformans" />
+                <ScalarProperty Name="Kalite" ColumnName="Kalite" />
+                <ScalarProperty Name="DisGörünüs" ColumnName="DisGörünüs" />
+                <ScalarProperty Name="KullanimKolayligi" ColumnName="KullanimKolayligi" />
+                <ScalarProperty Name="Point_ID" ColumnName="Point_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="User_FeedBackModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SellPrice" ColumnName="SellPrice" />
+                <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubCategory">
+            <EntityTypeMapping TypeName="User_FeedBackModel.SubCategory">
+              <MappingFragment StoreEntitySet="SubCategory">
+                <ScalarProperty Name="SubID" ColumnName="SubID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="SubName" ColumnName="SubName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Com">
+            <EntityTypeMapping TypeName="User_FeedBackModel.User_Com">
+              <MappingFragment StoreEntitySet="User_Com">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Com_ID" ColumnName="Com_ID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_PI">
+            <EntityTypeMapping TypeName="User_FeedBackModel.User_PI">
+              <MappingFragment StoreEntitySet="User_PI">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UName" ColumnName="UName" />
+                <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+                <ScalarProperty Name="BirdDay" ColumnName="BirdDay" />
+                <ScalarProperty Name="IMG" ColumnName="IMG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vCategory">
+            <EntityTypeMapping TypeName="User_FeedBackModel.vCategory">
+              <MappingFragment StoreEntitySet="vCategory">
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="SubName" ColumnName="SubName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vFeedBack">
+            <EntityTypeMapping TypeName="User_FeedBackModel.vFeedBack">
+              <MappingFragment StoreEntitySet="vFeedBack">
+                <ScalarProperty Name="Bildirim_Numarası" ColumnName="Bildirim_Numarası" />
+                <ScalarProperty Name="Kullanıcı_Adı" ColumnName="Kullanıcı_Adı" />
+                <ScalarProperty Name="Ürün_İsmi" ColumnName="Ürün_İsmi" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vProducts">
+            <EntityTypeMapping TypeName="User_FeedBackModel.vProducts">
+              <MappingFragment StoreEntitySet="vProducts">
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SubName" ColumnName="SubName" />
+                <ScalarProperty Name="SellPrice" ColumnName="SellPrice" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeedBack_Description">
+            <EntityTypeMapping TypeName="User_FeedBackModel.FeedBack_Description">
+              <MappingFragment StoreEntitySet="FeedBack_Description">
+                <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+                <ScalarProperty Name="Desc_ID" ColumnName="Desc_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FeedBackID" ColumnName="FeedBackID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeedBack_Info">
+            <EntityTypeMapping TypeName="User_FeedBackModel.FeedBack_Info">
+              <MappingFragment StoreEntitySet="FeedBack_Info">
+                <ScalarProperty Name="IMG" ColumnName="IMG" />
+                <ScalarProperty Name="FormationDay" ColumnName="FormationDay" />
+                <ScalarProperty Name="BuyDate" ColumnName="BuyDate" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="FeedBackID" ColumnName="FeedBackID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

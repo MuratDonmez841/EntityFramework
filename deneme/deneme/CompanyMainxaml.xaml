@@ -1,0 +1,42 @@
+﻿<Window x:Class="deneme.CompanyMainxaml"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:deneme"
+        mc:Ignorable="d"
+        Title="CompanyMainxaml" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="193*"/>
+            <ColumnDefinition Width="599*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <TreeView Margin="0,30" Grid.Column="0">
+                <TreeViewItem Header="Şirket Bilgileri" IsExpanded="True">
+                    <Button Name="btnCompanyProfil" Background="Transparent" Width="142"  BorderBrush="Transparent" Content="Profil" Click="BtnCompanyProfil_Click">
+                    </Button>
+                </TreeViewItem>
+                <TreeViewItem Header="Geri Bildirimler">
+                    <Button Name="bbtnFeed" Background="Transparent" Width="142"  BorderBrush="Transparent" Content="Geri bildirimler" Click="BbtnFeed_Click" >
+                    </Button>
+                </TreeViewItem>
+                <TreeViewItem Header="Ürün İşlemleri">
+                    <Button Name="btnAdd" Background="Transparent" Width="142"  BorderBrush="Transparent" Content="Ekle" Click="BtnAdd_Click">
+                    </Button>
+                    <Button Name="btnUpdate" Background="Transparent" Width="142"  BorderBrush="Transparent" Content="Düzenle" Click="BtnUpdate_Click">
+                    </Button>
+                    <Button Name="btnDel" Background="Transparent" Width="142"  BorderBrush="Transparent" Content="Sil" Click="BtnDel_Click">
+                    </Button>
+                </TreeViewItem>
+                <TreeViewItem Header="Kategori İşlemleri">
+                    <Button Name="btnAddCategory" Background="Transparent" Width="142"  BorderBrush="Transparent" Content="Ekle ve Düzenle" Click="BtnAddCategory_Click"/>
+                </TreeViewItem>
+            </TreeView>
+          
+        </Grid>
+        <Grid Grid.Column="1" Name="gridCompanyMain" Margin="30">
+            
+        </Grid>
+    </Grid>
+</Window>

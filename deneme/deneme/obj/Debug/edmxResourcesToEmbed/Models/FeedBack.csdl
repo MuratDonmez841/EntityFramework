@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="User_FeedBackModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SubCategory" Relationship="Self.FK__SubCatego__Categ__02084FDA" FromRole="Category" ToRole="SubCategory" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="User_PI" Relationship="Self.FK__Company__UserID__7B5B524B" FromRole="Company" ToRole="User_PI" />
+    <NavigationProperty Name="Company_Info" Relationship="Self.FK__Company_I__Compa__7D439ABD" FromRole="Company" ToRole="Company_Info" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product__Company__05D8E0BE" FromRole="Company" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Company_Info">
+    <Key>
+      <PropertyRef Name="Info_ID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Adress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TelNu" Type="Int64" />
+    <Property Name="Info_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Icon" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Company" Relationship="Self.FK__Company_I__Compa__7D439ABD" FromRole="Company_Info" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="FeedBack_Point">
+    <Key>
+      <PropertyRef Name="Point_ID" />
+    </Key>
+    <Property Name="FeedBackID" Type="Int32" />
+    <Property Name="Dayaniklilik" Type="Int32" />
+    <Property Name="FiyatPerformans" Type="Int32" />
+    <Property Name="Kalite" Type="Int32" />
+    <Property Name="DisGörünüs" Type="Int32" />
+    <Property Name="KullanimKolayligi" Type="Int32" />
+    <Property Name="Point_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="FeedBack_Info" Relationship="User_FeedBackModel.FK__FeedBack___FeedB__0B91BA14" FromRole="FeedBack_Point" ToRole="FeedBack_Info" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SellPrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SubCategoryID" Type="Int32" />
+    <Property Name="CompanyID" Type="Int32" />
+    <NavigationProperty Name="Company" Relationship="Self.FK__Product__Company__05D8E0BE" FromRole="Product" ToRole="Company" />
+    <NavigationProperty Name="SubCategory" Relationship="Self.FK__Product__SubCate__04E4BC85" FromRole="Product" ToRole="SubCategory" />
+    <NavigationProperty Name="FeedBack_Info" Relationship="User_FeedBackModel.FK__FeedBack___Produ__08B54D69" FromRole="Product" ToRole="FeedBack_Info" />
+  </EntityType>
+  <EntityType Name="SubCategory">
+    <Key>
+      <PropertyRef Name="SubID" />
+    </Key>
+    <Property Name="SubID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="SubName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__SubCatego__Categ__02084FDA" FromRole="SubCategory" ToRole="Category" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product__SubCate__04E4BC85" FromRole="SubCategory" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="User_Com">
+    <Key>
+      <PropertyRef Name="Com_ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="Int64" Nullable="false" />
+    <Property Name="Adress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Com_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User_PI" Relationship="Self.FK__User_Com__ID__693CA210" FromRole="User_Com" ToRole="User_PI" />
+  </EntityType>
+  <EntityType Name="User_PI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UName" Type="String" MaxLength="65" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cinsiyet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BirdDay" Type="DateTime" Precision="3" />
+    <Property Name="IMG" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Company" Relationship="Self.FK__Company__UserID__7B5B524B" FromRole="User_PI" ToRole="Company" />
+    <NavigationProperty Name="User_Com" Relationship="Self.FK__User_Com__ID__693CA210" FromRole="User_PI" ToRole="User_Com" />
+    <NavigationProperty Name="FeedBack_Info" Relationship="User_FeedBackModel.FK__FeedBack___UserI__09A971A2" FromRole="User_PI" ToRole="FeedBack_Info" />
+  </EntityType>
+  <EntityType Name="vCategory">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int64" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SubName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vFeedBack">
+    <Key>
+      <PropertyRef Name="Bildirim_Numarası" />
+    </Key>
+    <Property Name="Bildirim_Numarası" Type="Int32" Nullable="false" />
+    <Property Name="Kullanıcı_Adı" Type="String" MaxLength="65" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ürün_İsmi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Company" Type="Int32" Nullable="false" />
+    <Property Name="Tarih" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="vProducts">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int64" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SubName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SellPrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CompanyName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__SubCatego__Categ__02084FDA">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="SubCategory">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Company__UserID__7B5B524B">
+    <End Role="User_PI" Type="Self.User_PI" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_PI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Company_I__Compa__7D439ABD">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Company_Info" Type="Self.Company_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Company_Info">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Company__05D8E0BE">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__SubCate__04E4BC85">
+    <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategory">
+        <PropertyRef Name="SubID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Com__ID__693CA210">
+    <End Role="User_PI" Type="Self.User_PI" Multiplicity="0..1" />
+    <End Role="User_Com" Type="Self.User_Com" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_PI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User_Com">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Company" EntityType="Self.Company" />
+    <EntitySet Name="Company_Info" EntityType="Self.Company_Info" />
+    <EntitySet Name="FeedBack_Point" EntityType="Self.FeedBack_Point" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="SubCategory" EntityType="Self.SubCategory" />
+    <EntitySet Name="User_Com" EntityType="Self.User_Com" />
+    <EntitySet Name="User_PI" EntityType="Self.User_PI" />
+    <EntitySet Name="vCategory" EntityType="Self.vCategory" />
+    <EntitySet Name="vFeedBack" EntityType="Self.vFeedBack" />
+    <EntitySet Name="vProducts" EntityType="Self.vProducts" />
+    <AssociationSet Name="FK__SubCatego__Categ__02084FDA" Association="Self.FK__SubCatego__Categ__02084FDA">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="SubCategory" EntitySet="SubCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Company__UserID__7B5B524B" Association="Self.FK__Company__UserID__7B5B524B">
+      <End Role="User_PI" EntitySet="User_PI" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Company_I__Compa__7D439ABD" Association="Self.FK__Company_I__Compa__7D439ABD">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Company_Info" EntitySet="Company_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Company__05D8E0BE" Association="Self.FK__Product__Company__05D8E0BE">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__SubCate__04E4BC85" Association="Self.FK__Product__SubCate__04E4BC85">
+      <End Role="SubCategory" EntitySet="SubCategory" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Com__ID__693CA210" Association="Self.FK__User_Com__ID__693CA210">
+      <End Role="User_PI" EntitySet="User_PI" />
+      <End Role="User_Com" EntitySet="User_Com" />
+    </AssociationSet>
+    <EntitySet Name="FeedBack_Description" EntityType="User_FeedBackModel.FeedBack_Description" />
+    <EntitySet Name="FeedBack_Info" EntityType="User_FeedBackModel.FeedBack_Info" />
+    <AssociationSet Name="FK__FeedBack___FeedB__0D7A0286" Association="User_FeedBackModel.FK__FeedBack___FeedB__0D7A0286">
+      <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+      <End Role="FeedBack_Description" EntitySet="FeedBack_Description" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FeedBack___FeedB__0B91BA14" Association="User_FeedBackModel.FK__FeedBack___FeedB__0B91BA14">
+      <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+      <End Role="FeedBack_Point" EntitySet="FeedBack_Point" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FeedBack___Produ__08B54D69" Association="User_FeedBackModel.FK__FeedBack___Produ__08B54D69">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FeedBack___UserI__09A971A2" Association="User_FeedBackModel.FK__FeedBack___UserI__09A971A2">
+      <End Role="User_PI" EntitySet="User_PI" />
+      <End Role="FeedBack_Info" EntitySet="FeedBack_Info" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FeedBack_Description">
+    <Key>
+      <PropertyRef Name="Desc_ID" />
+    </Key>
+    <Property Name="FeedBackID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Desc_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyDescription" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FeedBack_Info" Relationship="User_FeedBackModel.FK__FeedBack___FeedB__0D7A0286" FromRole="FeedBack_Description" ToRole="FeedBack_Info" />
+  </EntityType>
+  <EntityType Name="FeedBack_Info">
+    <Key>
+      <PropertyRef Name="FeedBackID" />
+    </Key>
+    <Property Name="FeedBackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="BuyDate" Type="DateTime" Precision="3" />
+    <Property Name="FormationDay" Type="DateTime" Precision="0" />
+    <Property Name="IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FeedBack_Description" Relationship="User_FeedBackModel.FK__FeedBack___FeedB__0D7A0286" FromRole="FeedBack_Info" ToRole="FeedBack_Description" />
+    <NavigationProperty Name="FeedBack_Point" Relationship="User_FeedBackModel.FK__FeedBack___FeedB__0B91BA14" FromRole="FeedBack_Info" ToRole="FeedBack_Point" />
+    <NavigationProperty Name="Product" Relationship="User_FeedBackModel.FK__FeedBack___Produ__08B54D69" FromRole="FeedBack_Info" ToRole="Product" />
+    <NavigationProperty Name="User_PI" Relationship="User_FeedBackModel.FK__FeedBack___UserI__09A971A2" FromRole="FeedBack_Info" ToRole="User_PI" />
+  </EntityType>
+  <Association Name="FK__FeedBack___FeedB__0D7A0286">
+    <End Type="User_FeedBackModel.FeedBack_Info" Role="FeedBack_Info" Multiplicity="0..1" />
+    <End Type="User_FeedBackModel.FeedBack_Description" Role="FeedBack_Description" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FeedBack_Info">
+        <PropertyRef Name="FeedBackID" />
+      </Principal>
+      <Dependent Role="FeedBack_Description">
+        <PropertyRef Name="FeedBackID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FeedBack___FeedB__0B91BA14">
+    <End Type="User_FeedBackModel.FeedBack_Info" Role="FeedBack_Info" Multiplicity="0..1" />
+    <End Type="User_FeedBackModel.FeedBack_Point" Role="FeedBack_Point" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FeedBack_Info">
+        <PropertyRef Name="FeedBackID" />
+      </Principal>
+      <Dependent Role="FeedBack_Point">
+        <PropertyRef Name="FeedBackID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FeedBack___Produ__08B54D69">
+    <End Type="User_FeedBackModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="User_FeedBackModel.FeedBack_Info" Role="FeedBack_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FeedBack_Info">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FeedBack___UserI__09A971A2">
+    <End Type="User_FeedBackModel.User_PI" Role="User_PI" Multiplicity="1" />
+    <End Type="User_FeedBackModel.FeedBack_Info" Role="FeedBack_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_PI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FeedBack_Info">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

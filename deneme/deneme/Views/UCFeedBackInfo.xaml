@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="deneme.Views.UCFeedBackInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:deneme.Views"
+             mc:Ignorable="d" 
+      
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Name="gridCH" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.9*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="2"  >
+                    <Label Content="Ürün Bilgileri" HorizontalAlignment="Center" Foreground="SteelBlue"/>
+                </StackPanel>
+                <StackPanel Grid.Column="0" Grid.Row="1">
+                    <Label Content="Üretici Firma: "/>
+                    <Label Content="İsmi: "/>
+                    <Label Content="Şuanki Staş Fiyatı:"/>
+                    <Label Content="Satın Alım Tarihi: "/>
+
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="1">
+                    <TextBox Name="cbCompanyName" Margin="10,0" IsReadOnly="True" Background="LightGray" />
+                    <TextBox Name="cbName" Margin="10,8" IsReadOnly="True" Background="LightGray" />
+                    <TextBox Name="txtSellPrice" Margin="10,0" IsReadOnly="True" Background="LightGray"/>
+                    <TextBox Name="dateBuy" Margin="10,8" IsReadOnly="True" Background="LightGray" />
+
+                </StackPanel>
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.9*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+                    <Label Content="Kullanıcının Değerlendirmesi" HorizontalAlignment="Center" Foreground="SteelBlue"/>
+                </StackPanel>
+                <StackPanel Grid.Column="0" Grid.Row="1">
+                    <Label Content="Dayanıklılık: "/>
+                    <Label Content="Fiyat Performans: "/>
+                    <Label Content="Kalite: "/>
+                    <Label Content="Dış Görünüş: "/>
+                    <Label Content="Kullanım Kolaylığı: "/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="1">
+                    <TextBox Name="cbDyaniklilik" Margin="10,0" IsReadOnly="True" Background="LightGray" />
+                    <TextBox Name="cbFiyatPerf" Margin="10,8" IsReadOnly="True" Background="LightGray" />
+                    <TextBox Name="cbKalite" Margin="10,0" IsReadOnly="True" Background="LightGray" />
+                    <TextBox Name="cbDisGörünüs" Margin="10,8" IsReadOnly="True" Background="LightGray" />
+                    <TextBox Name="cbKullanimKolaylıgı" Margin="10,0" IsReadOnly="True" Background="LightGray" />
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="0" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="78*"/>
+                    <RowDefinition Height="70*"/>
+                    <RowDefinition Height="36*"/>
+                    <RowDefinition Height="21*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <Label Content="Kullanıcının Açıklaması" HorizontalAlignment="Center" Foreground="SteelBlue"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <RichTextBox Name="richBoxDiscp" Margin="30,3" Height="69" IsReadOnly="True" Background="LightGray" >
+
+                    </RichTextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2">
+                    <RichTextBox Name="richCompany" Margin="30,3" Height="65" PreviewMouseLeftButtonUp="RichCompany_PreviewMouseLeftButtonUp"   >
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text="Açıklamanızı buraya girin"/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                </StackPanel>
+                <Button Grid.Row="3" Height="30" Width="100" Content="Kaydet" Name="btnCompanyDescriptionAdd" Click="BtnCompanyDescriptionAdd_Click" />
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="155*"/>
+                    <RowDefinition Height="47*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <Label Content="Kullanıcıcn Yolladığı Resim" HorizontalAlignment="Center" Foreground="SteelBlue"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <Image Name="IMGProduct" Height="155"/>
+                </StackPanel>
+                <Grid Grid.Row="2">
+                    <Button Name="btnGeri" Content="Geri" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="154,10,151,10" Width="95" Height="27" Click="BtnGeri_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

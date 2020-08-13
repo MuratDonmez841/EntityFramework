@@ -1,0 +1,110 @@
+﻿<Window x:Class="ProductEvalation.User.UI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProductEvalation.User"
+        mc:Ignorable="d"
+        Title="UI" Height="450" Width="800">
+    <Grid>
+
+        <TabControl Name="tabControl" SelectionChanged="TabControl_SelectionChanged" >
+            <TabItem Header="Bike" Name="tbItemBike" TabIndex="0" >
+                <Grid>
+                    <StackPanel>
+                        <DataGrid Name="dtBike" SelectionChanged="DtBike_SelectionChanged" IsReadOnly="True" AutoGeneratingColumn="DtBike_AutoGeneratingColumn">
+                        </DataGrid>
+                        <Image Name="ImgDeneme" Height="100" />
+                        <Button Name="btnBack" Content="Geri" Width="30"  Click="BtnBack_Click"/>
+                    </StackPanel >
+                    <Popup Height="200" Width="200"  Placement="MousePoint"  Name="popupBike">
+                        <StackPanel  Background="LightGray">
+                            <Image Name="ImgBike" Height="100"/>
+                            <Label Name="lblAvgPoint"/>
+                            <Button Name="btnBuy" Content="Satın Al" Click="BtnBuy_Click"/>
+                            <Button Name="btnColosepopup" Content="Kapat" Click="BtnColosepopup_Click"/>
+                        </StackPanel>
+                    </Popup>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Gloves" Name="tbItemGloves" TabIndex="1" >
+                <Grid>
+                    <StackPanel Grid.Column="0">
+                        <DataGrid Name="dtGloves" SelectionChanged="DtGloves_SelectionChanged" IsReadOnly="True" AutoGeneratingColumn="DtGloves_AutoGeneratingColumn"/>
+                    </StackPanel>
+                    <Popup Height="200" Width="200"  Placement="Mouse"  Name="popup">
+                        <StackPanel  Background="LightGray">
+                            <Image Name="ImgGloves" Height="100"/>
+                            <Label Name="lblAvgPoi"/>
+                            <Button Name="btnyub" Content="Satın Al" Click="BtnBuy_Click"/>
+                            <Button Name="btnClosepopup" Content="Kapat" Click="BtnColosepopup_Click"/>
+                        </StackPanel>
+                    </Popup>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tshirt" Name="tbItemTshirt" TabIndex="2">
+                <Grid>
+                    <StackPanel Grid.Column="0">
+                        <DataGrid Name="dtTshirt" SelectionChanged="DtTshirt_SelectionChanged" IsReadOnly="True" AutoGeneratingColumn="DtTshirt_AutoGeneratingColumn"/>
+                    </StackPanel>
+                    <Popup Height="200" Width="200"  Placement="Mouse"  Name="popupTshirt">
+                        <StackPanel  Background="LightGray">
+                            <Image Name="ImgTshirt" Height="100"/>
+                            <Label Name="lblAvgPointTh"/>
+                            <Button Name="btnbuyTshirt" Content="Satın Al" Click="BtnBuy_Click"/>
+                            <Button Name="btnClosepopupTshirt" Content="Kapat" Click="BtnColosepopup_Click"/>
+                        </StackPanel>
+                    </Popup>
+                </Grid>
+            </TabItem>
+        
+            <TabItem Header="Profilim" Margin="604,0,-608,-2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.6*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+
+                        <Button Background="Transparent" Name="IMGClick" Click="IMGClick_Click" Height="100" Width="100" HorizontalAlignment="Left">
+                            <Image Name="ImgUser"  HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        </Button>
+                        <Label Name="lblUserId" Width="130" Height="25" />
+                        <Label Content="Adı Soyadı"/>
+                        <Label Content="Telefon Numarası"/>
+                        <Label Content="Mail Adresi"/>
+                        <Label Content="İl"/>
+                        <Label Content="İlçe"/>
+                        <Label Content="Posta Kodu"/>
+                        <Label Content="Adres"/>
+
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Label Content="Kullanıcı Bilgileri" Width="100" />
+                        <TextBox Margin="0,100,0,0" Name="txtName"/>
+                        <TextBox Margin="0,5" Name="txtTelNU"/>
+                        <TextBox Margin="0,5" Name="txtMail"/>
+                        <TextBox Margin="0,5" Name="txtProv"/>
+                        <TextBox Margin="0,2" Name="txtDisc"/>
+                        <TextBox Margin="0,5" Name="txtPotKod"/>
+                        <RichTextBox Margin="0,5"  Background="LightGray" Name="txtAdress"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="3">
+                        <PasswordBox  Name="txtPass1" Margin="0,120,0,0"/>
+                        <PasswordBox Margin="0,8" Name="txtPass2"/>
+                        <Button Name="btnFeedBack" Content="Ürünlerim"  Click="BtnFeedBack_Click" Width="120"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <Label Content="Yeni Şifre" Margin="0,120,0,0"/>
+                        <Label Content="Yeni Şifre Tekrar*"/>
+                        <Button Name="btnUpdateUserInfo" Content="Bilgilerimi Güncelle"  Click="BtnUpdateUserInfo_Click" Width="120" />
+                        <Button Name="btnTicket" Content="Açık Biletlerimi Gör" Width="120" Margin="0,10" Click="BtnTicket_Click"/>
+                    </StackPanel>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
